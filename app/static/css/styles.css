@@ -341,8 +341,8 @@ a:hover {
 }
 
 .navbar .logo-image img {
-    width: 108px;
-	height: 32px;
+    width: 64px;
+	height: 64px;
 }
 
 .navbar .logo-text {
@@ -484,7 +484,7 @@ a:hover {
 
 .header .h1-large {
 	margin-bottom: 2.5rem;
-	color: #ffffff;
+	color: #FFFFFF;
 	font-size: 4rem;
 	line-height: 4.5rem;
 }
