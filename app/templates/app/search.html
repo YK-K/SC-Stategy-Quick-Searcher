@@ -59,7 +59,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-10 offset-xl-1">
-                    <h1>전략 검색 메뉴</h1>
+                    <h1>Search Strategies</h1>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
@@ -95,7 +95,7 @@
                     		{% endif %}
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title"><br>{{ strategy.title }}</h4>
+                            <h4 class="card-title"><a href="{% url 'strategy_detail' pk=strategy.pk %}"><br>{{ strategy.title }}</a></h4>
                             <div class="card-text">
 								<p><strong>종족 : </strong> 플레이어({{ strategy.playerRace }}) vs 상대({{ strategy.enemyRace }})</p>
                         		<p><strong>핵심 유닛 : </strong> {{ strategy.keyUnit }}</p>
@@ -161,7 +161,7 @@
                                 <div class="flex-grow-1">맵</div>
                             </li>
                         </ul>
-                        <a id="modalCtaBtn" class="btn-solid-reg" href="#contact">Search</a>
+                        <a id="modalCtaBtn" class="btn-solid-reg" href="search.html">Search</a>
                         <button type="button" class="btn-outline-reg" data-bs-dismiss="modal">Close</button>
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
