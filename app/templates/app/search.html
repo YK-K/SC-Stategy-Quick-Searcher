@@ -42,16 +42,10 @@
             <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav ms-auto navbar-nav-scroll">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#header">Home</a>
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#tutorial_search">전략 검색</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#tutorial_new_strategy">새로운 전략 작성</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#tutorial_evaluate_and_comment">전략 평가 / 코멘트</a>
+                        <a class="nav-link active" data-bs-toggle="modal" data-bs-target="#staticBackdrop">검색 조건 설정</a>
                     </li>
                 </ul>
             </div> <!-- end of navbar-collapse -->
@@ -61,96 +55,68 @@
 
       
     <!-- Header -->
-    <header id="header" class="header">
+    <header class="ex-header">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                    <h1 class="h1-large">Starcraft<br> Strategy<br> Quick<br> Searcher</h1>
-                </div> <!-- end of col -->
-                <div class="col-lg-6">
-                    <div class="button-container">
-                        <a class="btn-solid-lg page-scroll" href="#tutorial_search">전략 검색하기</a>
-                        <a class="btn-outline-lg page-scroll" href="#tutorial_search">튜토리얼</a>
-                    </div> <!-- end of button-container -->
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>전략 검색 메뉴</h1>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
-    </header> <!-- end of header -->
+    </header> <!-- end of ex-header -->
     <!-- end of header -->
-
-
-    <!-- Tutorial_Search -->
-    <div id="tutorial_search" class="basic-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="h2-heading">키워드로 빠르게 전략을 검색하세요.</h2>
-                    <hr class="hr-heading">
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="step-container">
-                        <div class="step">키워드(태그) 선택</div>
-                        <i class="fas fa-chevron-right"></i>
-                        <div class="step">검색</div>
-                        <i class="fas fa-chevron-right"></i>
-                        <div class="step">빠른 전략 확인</div>
-                    </div> <!-- end of step-container -->
-                    <p>종족, 상대 종족, 핵심 유닛, 전략 형태(타이밍, 올인, ...), 난이도, 맵 등의 다양한 태그(키워드)를 이용하여 전략을 검색할 수 있습니다.</p>
-                    <a class="btn-solid-reg" data-bs-toggle="modal" data-bs-target="#staticBackdrop">전략 검색</a>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of basic-5 -->
-    <!-- end of tutorial_search -->
-
-
-    <!-- Tutorial_New_Strategy -->
-    <div id="tutorial_new_strategy" class="basic-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-xl-5">
-                    <div class="text-container">
-                        <h2>자신만의 새로운 전략을 작성하여 공유해 보세요.</h2>
-                        <p>스타크래프트 전략전술 퀵 서처에서 제공하는 프리셋을 사용하여, 손쉽게 전략 내용을 정리하고 공유할 수 있습니다.</p>
-                        <a class="read-more no-line green" href="article.html">작성하러 가기</a>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-                <div class="col-lg-6 col-xl-7">
-                    <div class="image-container">
-                        <img class="img-fluid" src="images/sc_logo.jpg" alt="alternative">
-                    </div> <!-- end of image-container -->
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of basic-2 -->
-    <!-- end of tutorial_new_strategy -->
-
-
-    <!-- Tutorial_Evaluate_And_Comment -->
-    <div id="tutorial_evaluate_and_comment" class="basic-3 bg-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-xl-7">
-                    <div class="image-container">
-                        <img class="img-fluid" src="images/project-2.jpg" alt="alternative">
-                    </div> <!-- end of image-container -->
-                </div> <!-- end of col -->
-                <div class="col-lg-6 col-xl-5">
-                    <div class="text-container">
-                        <h2>전략 평가 및 코멘트 작성</h2>
-                        <p>전략이 마음에 드셨나요? <br>검색한 전략을 평가하고 코멘트를 작성해 보세요!</p>
-                        <a class="btn-solid-reg" data-bs-toggle="modal" data-bs-target="#staticBackdrop">전략 검색</a>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of basic-3 -->
-    <!-- end of Tutorial_Evaluate_And_Comment -->
     
-
-    <!-- Search Page -->
+    
+    <!-- Result List -->
+    <div id="result_list" class="cards-1 bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="h2-heading">검색 결과</h2>
+                    <p class="p-heading">조건에 맞는 전략 검색 결과가 하단에 표시됩니다. 조건에 맞는 전략이 존재하지 않을 경우 표시되지 않습니다.</p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+                
+                	{% for strategy in strategies %}
+                	
+                    <!-- Card -->
+                    <div class="card first">
+                        <div class="card-icon">
+                            {% if strategy.playerRace == 'Terran' %}
+                    			<img src="{% static 'images/Terran_logo.png' %}" alt="alternative" width="128px" height="128px">
+                    		{% endif %}
+                    		{% if strategy.playerRace == 'Zerg' %}
+                    			<img src="{% static 'images/Zerg_logo.png' %}" alt="alternative" width="128px" height="128px">
+                    		{% endif %}
+                    		{% if strategy.playerRace == 'Protoss' %}
+                    			<img src="{% static 'images/Protoss_logo.png' %}" alt="alternative" width="128px" height="128px">
+                    		{% endif %}
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title"><br>{{ strategy.title }}</h4>
+                            <div class="card-text">
+								<p><strong>종족 : </strong> 플레이어({{ strategy.playerRace }}) vs 상대({{ strategy.enemyRace }})</p>
+                        		<p><strong>핵심 유닛 : </strong> {{ strategy.keyUnit }}</p>
+                        		<p><strong>전략 형태 : </strong> {{ strategy.strategyType }}</p>
+                        		<p><strong>작성 날짜 : </strong> {{ strategy.created_date }}</p>
+                        		<p><strong>수정 날짜 : </strong> {{ strategy.modified_date }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+                    
+                    {% endfor %}
+                    
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of cards-1 -->
+    <!-- end of Result List -->
+    
+    
+    <!-- Search Condition -->
     <div id="staticBackdrop" class="modal fade" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -202,7 +168,7 @@
             </div> <!-- end of modal-content -->
         </div> <!-- end of modal-dialog -->
     </div> <!-- end of search page -->
-    <!-- end of Search Page -->
+    <!-- end of Search Condition -->
 
 
     <!-- Footer -->
