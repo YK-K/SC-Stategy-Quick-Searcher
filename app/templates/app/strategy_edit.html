@@ -45,9 +45,6 @@
                         <a class="nav-link active" aria-current="page" href="../../index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="strategy_edit.html">수정</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="../../search.html">검색 화면으로 돌아가기</a>
                     </li>
                 </ul>
@@ -62,7 +59,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-10 offset-xl-1">
-                    <h1>Strategy Detail</h1>
+                    <h1>Edit Strategy</h1>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
@@ -75,70 +72,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-10 offset-xl-1">
-                	
-                	<!-- title_and_race_type -->
-    				<div id="title_and_race_type" class="basic-5">
-        				<div class="container">
-            				<div class="row">
-                				<div class="col-lg-12">
-                    				<h2 class="h2-heading">{{ strategy.title }}</h2>
-                    				<hr class="hr-heading">
-                				</div> <!-- end of col -->
-            				</div> <!-- end of row -->
-            				<div class="row">
-                				<div class="col-lg-12">
-                    				<div class="step-container">
-                        				<div class="step">플레이어 종족</div>
-                        				<i class="fas fa-chevron-right"></i>
-                        				<div class="step">상대 종족</div>
-                    				</div> <!-- end of step-container -->
-                    				<div class="step-container">
-                        				{% if strategy.playerRace == 'Terran' %}
-                    						<img src="{% static 'images/Terran_logo.png' %}" alt="alternative" width="128px" height="128px">
-                    					{% endif %}
-                    					{% if strategy.playerRace == 'Zerg' %}
-                    						<img src="{% static 'images/Zerg_logo.png' %}" alt="alternative" width="128px" height="128px">
-                    					{% endif %}
-                    					{% if strategy.playerRace == 'Protoss' %}
-                    						<img src="{% static 'images/Protoss_logo.png' %}" alt="alternative" width="128px" height="128px">
-                    					{% endif %}
-                        				<i class="fas fa-chevron-right"></i>
-                        				{% if strategy.enemyRace == 'Terran' %}
-                    						<img src="{% static 'images/Terran_logo.png' %}" alt="alternative" width="128px" height="128px">
-                    					{% endif %}
-                    					{% if strategy.enemyRace == 'Zerg' %}
-                    						<img src="{% static 'images/Zerg_logo.png' %}" alt="alternative" width="128px" height="128px">
-                    					{% endif %}
-                    					{% if strategy.enemyRace == 'Protoss' %}
-                    						<img src="{% static 'images/Protoss_logo.png' %}" alt="alternative" width="128px" height="128px">
-                    					{% endif %}
-                        				
-                    				</div> <!-- end of step-container -->
-                				</div> <!-- end of col -->
-            				</div> <!-- end of row -->
-        				</div> <!-- end of container -->
-    				</div> <!-- end of basic-5 -->
-    				<!-- end of title_and_race_type -->
-                	
-                	<br>
-
-                    <h2 class="mb-3">1. 핵심 유닛 (keyUnit)</h2>
-                    <p>{{ strategy.keyUnit }}</p>
-
-                    <h2 class="mb-3">2. 전략 형태 (strategyType)</h2>
-                    <p>{{ strategy.strategyType }}</p>
-                    
-                    <h2 class="mb-3">3. 난이도 (difficulty)</h2>
-                    <p>{{ strategy.difficulty }}</p>
-                    
-                    <h2 class="mb-3">4. 사용가능한 맵 (mapname)</h2>
-                    <p>{{ strategy.mapname }}</p>
-                    
-                    <div class="text-box mt-5 mb-5">
-                    	<h2 class="mb-3">전략 상세 (text)</h2>
-                        <p class="p-large">{{ strategy.text }}</p>
-                    </div> <!-- end of text-box -->
-
+                	    <form method="POST" class="post-form">{% csrf_token %}
+    						{{ form.as_ul }} 
+    						<button type="submit" class="nav-link">저장</button>
+    					</form>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->

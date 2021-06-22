@@ -28,3 +28,17 @@ def strategy_new(request):
 		form = StrategyForm
 		
 	return render(request, 'app/strategy_new.html', {'form': form})
+	
+def strategy_edit(request, pk):
+	strategy = get_object_or_404(Strategy, pk=pk)
+	if request.method == "POST":
+		form = StrategyForm(request.POST, instance=strategy)
+		if form.is_valid():
+			strategy = form.save(commit=False)
+			strategy.modified_date = timezone.now()
+			strategy.save()
+			return redirect('strategy_detail', pk=strategy.pk)
+	else:
+		form = StrategyForm
+		
+	return render(request, 'app/strategy_new.html', {'form': form})
