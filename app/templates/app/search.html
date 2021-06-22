@@ -30,10 +30,10 @@
         <div class="container">
 
             <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="index.html"><img src="{% static 'images/sc_logo_transparent.png' %}" alt="alternative"></a> 
+            <a class="navbar-brand logo-image" href="../index.html"><img src="{% static 'images/sc_logo_transparent.png' %}" alt="alternative"></a> 
 
             <!-- Text Logo -->
-            <a class="navbar-brand logo-text" href="index.html">스타크래프트 전략전술 퀵 서처</a>
+            <a class="navbar-brand logo-text" href="../index.html">스타크래프트 전략전술 퀵 서처</a>
 
             <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -42,13 +42,13 @@
             <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav ms-auto navbar-nav-scroll">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" data-bs-toggle="modal" data-bs-target="#staticBackdrop">검색 조건 설정</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="strategy_new.html">새 전략 만들기</a>
+                        <a class="nav-link active" aria-current="page" href="../strategy_new.html">새 전략 만들기</a>
                     </li>
                 </ul>
             </div> <!-- end of navbar-collapse -->
@@ -128,44 +128,29 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="col-lg-8">
                         <div class="image-container">
-                            <img class="img-fluid" src="images/details-modal.jpg" alt="alternative">
+                            <img class="img-fluid" src="{% static 'images/search_image.jpg' %}" alt="alternative">
                         </div> <!-- end of image-container -->
                     </div> <!-- end of col -->
                     <div class="col-lg-4">
                         <h3>전략 검색</h3>
                         <hr>
                         <p>키워드(태그)를 선택하여 전략을 검색하세요.</p>
-                        <h4>키워드(태그)</h4>
                         <p>아래 키워드를 사용할 수 있습니다.</p>
+                        <br>
                         <ul class="list-unstyled li-space-lg">
-                    		<li class="nav-item dropdown">
-                        		<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">플레이어 종족</a>
-                        		<ul class="dropdown-menu" aria-labelledby="dropdown01">
-                            		<li><a class="dropdown-item" href="search.html">Terran</a></li>
-                            		<li><div class="dropdown-divider"></div></li>
-                            		<li><a class="dropdown-item" href="search.html">Zerg</a></li>
-                            		<li><div class="dropdown-divider"></div></li>
-                            		<li><a class="dropdown-item" href="search.html">Protoss</a></li>
-                        		</ul>
+                        	<li class="nav-item dropdown">
+                        		<select id ="category">
+                        			<option value="title">전략 이름</option>
+                        			<option value="playerRace">플레이어 종족</option>
+                        			<option value="keyUnit">핵심 유닛</option>
+                        			<option value="strategyType">전략 형태</option>
+                        			<option value="mapname">맵 이름</option>
+                        			<option value="text">전략 상세 내용</option>
+                        		</select>
+                        		<input type="text" placeholder="검색할 키워드를 입력하세요">
                     		</li>
-                            <li class="d-flex">
-                                <i class="fas fa-chevron-right"></i>
-                                <div class="flex-grow-1">상대 종족</div>
-                            </li>
-                            <li class="d-flex">
-                                <i class="fas fa-chevron-right"></i>
-                                <div class="flex-grow-1">핵심 유닛</div>
-                            </li>
-                            <li class="d-flex">
-                                <i class="fas fa-chevron-right"></i>
-                                <div class="flex-grow-1">전략 형태</div>
-                            </li>
-                            <li class="d-flex">
-                                <i class="fas fa-chevron-right"></i>
-                                <div class="flex-grow-1">맵</div>
-                            </li>
                         </ul>
-                        <a id="modalCtaBtn" class="btn-solid-reg" href="search.html">Search</a>
+                        <a id="modalCtaBtn" class="btn-solid-reg" href="?type={{ type }}&q={{ q }}">Search</a>
                         <button type="button" class="btn-outline-reg" data-bs-dismiss="modal">Close</button>
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->

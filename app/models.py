@@ -14,7 +14,6 @@ class Strategy(models.Model):
 	difficulty = models.CharField(blank=True, choices=difficultyType.choices, max_length=10) # 난이도
 	mapname = models.TextField() # 맵
 	text = models.TextField() # 전략 상세 내용
-	password = models.CharField(max_length=10) # 수정 비밀번호
 	created_date = models.DateTimeField(default=timezone.now) # 전략을 작성한 날짜
 	modified_date = models.DateTimeField(blank=True, null=True) # 전략을 수정한 날짜
 	
