@@ -47,6 +47,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" data-bs-toggle="modal" data-bs-target="#staticBackdrop">검색 조건 설정</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="strategy_new.html">새 전략 만들기</a>
+                    </li>
                 </ul>
             </div> <!-- end of navbar-collapse -->
         </div> <!-- end of container -->
@@ -100,6 +103,7 @@
 								<p><strong>종족 : </strong> 플레이어({{ strategy.playerRace }}) vs 상대({{ strategy.enemyRace }})</p>
                         		<p><strong>핵심 유닛 : </strong> {{ strategy.keyUnit }}</p>
                         		<p><strong>전략 형태 : </strong> {{ strategy.strategyType }}</p>
+                        		<p><strong>맵 : </strong> {{ strategy.mapname }}</p>
                         		<p><strong>작성 날짜 : </strong> {{ strategy.created_date }}</p>
                         		<p><strong>수정 날짜 : </strong> {{ strategy.modified_date }}</p>
                             </div>
@@ -137,11 +141,11 @@
                     		<li class="nav-item dropdown">
                         		<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">플레이어 종족</a>
                         		<ul class="dropdown-menu" aria-labelledby="dropdown01">
-                            		<li><a class="dropdown-item" href="article.html">Terran</a></li>
+                            		<li><a class="dropdown-item" href="search.html">Terran</a></li>
                             		<li><div class="dropdown-divider"></div></li>
-                            		<li><a class="dropdown-item" href="terms.html">Zerg</a></li>
+                            		<li><a class="dropdown-item" href="search.html">Zerg</a></li>
                             		<li><div class="dropdown-divider"></div></li>
-                            		<li><a class="dropdown-item" href="privacy.html">Protoss</a></li>
+                            		<li><a class="dropdown-item" href="search.html">Protoss</a></li>
                         		</ul>
                     		</li>
                             <li class="d-flex">
